@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>뭉탱이패드</title>
+    </head>
+    <body>
+        <style>
+            @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SBAggroL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.aggrob{
+    font-family: 'SBAggroB'!important;
+}
+*{
+    font-family: 'SBAggroL';
+}
+        .sqbtn{
+            height:100px;
+            width:100px;
+            text-align:center;
+            font-size:25px;
+        }
+        </style>
+        <center>
+
+<h2 class="aggrob"><img src="mteLogo.svg" width="32px" alt="뭉탱이패드"> 뭉탱이패드</h2>
+<p>얘! 버튼 를! 누르거나 숫자패드에 적힌 글자 를! 눌러라!<br>버튼이 안눌려? Num Lock 를! 누르라맨</p>
+
+<button class="sqbtn">Num<br>Lock</button>
+<button onclick="playAudio('NumpadDivide')" class="sqbtn">/<br><small>아이고난</small></button>
+<button onclick="playAudio('NumpadMultiply')" class="sqbtn">*<br><small>없음</small></button>
+<br>
+<button onclick="playAudio('Numpad7')" class="sqbtn">7<br>뭉!</button>
+<button onclick="playAudio('Numpad8')" class="sqbtn">8<br>탱이!</button>
+<button onclick="playAudio('Numpad9')" class="sqbtn">9<br>오옹!</button>
+<br>
+<button onclick="playAudio('Numpad4')" class="sqbtn">4<br>를!</button>
+<button onclick="playAudio('Numpad5')" class="sqbtn">5<br>자~</button>
+<button onclick="playAudio('Numpad6')" class="sqbtn">6<br>자!</button>
+<br>
+<button onclick="playAudio('Numpad1')" class="sqbtn">1<br>춘잣!</button>
+<button onclick="playAudio('Numpad2')" class="sqbtn">2<br>한 나</button>
+<button onclick="playAudio('Numpad3')" class="sqbtn">3<br>흐헤헤</button>
+<br>
+<button onclick="playAudio('Numpad0')" class="sqbtn">0<br><small>할거에요</small></button>
+<button onclick="playAudio('NumpadDecimal')" class="sqbtn">.<br>동전</button>
+<button onclick="playAudio('NumpadEnter')" class="sqbtn">엔터<br><small>아이고난</small></button>
+<br>
+<p><strong>얘! <a href="https://github.com/papercore-dev/mtepad">오픈소스</a>란다! | <a href="https://twitch.tv/kanetv8"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/878px-Twitch_Glitch_Logo_Purple.svg.png" height="16" alt="트위치">케인트위치</a> | <a href="https://tgd.kr/kanetv8"><img src="https://play-lh.googleusercontent.com/3sOGDTg69Rpplbz1A5DGleS84V0vCUwfMuWlLu4iSSNOTWDrN3lCurY9wPbt2vi8qi8e" height="16" alt="트게더">트게더</a> | <a href="https://www.youtube.com/watch?v=cGAV_yXeePY">아이디어 제공</a></strong></p>
+</center>
+  <script>
+document.addEventListener('keydown', function(e) {
+      playAudio(e.code);
+  });
+
+  function playAudio(key){
+      if (key == 'Numpad1'){
+        var audio = new Audio('audio/chunjat.wav');
+      }
+      else if (key == 'Numpad2'){
+        var audio = new Audio('audio/hanna.wav');
+      }
+      else if (key == 'Numpad3'){
+        var audio = new Audio('audio/hhe.wav');
+      }
+      else if (key == 'Numpad4'){
+        var audio = new Audio('audio/lul.wav');
+      }
+      else if (key == 'Numpad5'){
+        var audio = new Audio('audio/ja.wav');
+      }
+      else if (key == 'Numpad6'){
+        var audio = new Audio('audio/ja2.wav');
+      }
+      else if (key == 'Numpad7'){
+        var audio = new Audio('audio/moong.wav');
+      }
+      else if (key == 'Numpad8'){
+        var audio = new Audio('audio/tenge.wav');
+      }
+      else if (key == 'Numpad9'){
+        var audio = new Audio('audio/ohong.wav');
+      }
+      else if (key == 'Numpad0'){
+        var audio = new Audio('audio/willdo.wav');
+      }
+      else if (key == 'NumpadDecimal'){
+        var audio = new Audio('audio/coin.wav');
+      }
+      else if (key == 'NumpadEnter'){
+        var audio = new Audio('audio/igonan1.wav');
+      }
+      else if (key == 'NumpadDivide'){
+        var audio = new Audio('audio/igonan2.wav');
+      }
+      else if (key == 'NumpadMultiply'){
+        var audio = new Audio('audio/nosound.ogg');
+      }
+      else{
+        //Temporary solution to not throw error
+        var audio = new Audio('audio/nosound.ogg');
+      }
+    audio.play();
+  }
+  </script>
+</body>
+</html>
